@@ -77,24 +77,24 @@ namespace ProjektPO
                 case "Add Product":
                     //
                     Device device = new Device(
-                        new Barcode(0b101),
-                        "Urzadzenie",
-                        "Opis",
-                        16.0M,
+                        new Barcode(0b001),
+                        "Blender GÖTZE & JENSEN HB950K Inox z krajarką w kostkę",
+                        "Blender kuchenny to wielofunkcyjne urządzenie, które umożliwia szybkie miksowanie, blendowanie i rozdrabnianie składników. Idealny do przygotowywania koktajli, zup kremów, sosów i smoothie. Wyposażony w mocny silnik i ostrza ze stali nierdzewnej, zapewnia efektywną pracę i łatwość obsługi. Niezastąpiony w każdej nowoczesnej kuchni",
+                        31.99M,
                         Category.Home,
                         new ASCIImage("Products//blender.txt"),
-                        200M,
+                        1000M,
                         230M,
                         1M,
                         1M
                         );
                     device.techSpecification = new Dictionary<string, string>()
                     {
-                        { "key1", "value1" },
-                        { "key2", "value2" }
+                        { "Regulacja obrotów", "Mechaniczna-płynna" },
+                        { "Funkcje", "Krojenie, Siekanie, Szatkowanie, Ubijanie piany, Ucieranie" }
                     };
 
-                    using (var file = File.Create("data//device__.prod"))
+                    using (var file = File.Create("data//blender.prdx"))
                     {
                         Serializer.Serialize(file, device);
                     }

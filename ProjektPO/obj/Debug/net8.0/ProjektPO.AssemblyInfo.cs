@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProjektPO")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ff184dacc7eef4d21f1a28812d2558b6a013825d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4e98218872d3d4165c69e87c6628c8d4f2b3c74f")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProjektPO")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProjektPO")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -38,7 +38,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\cshap projekty\\PROJEKT_PO\\ProjektPO\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAuwGAAAABJAAAAAAAAAA==",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAuwFYAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-07T13:29:26.688Z",
               "EditorCaption": ""
@@ -53,8 +53,7 @@
               "RelativeToolTip": "..\\Assets\\Assets.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAJQAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T13:29:20.232Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-07T13:29:20.232Z"
             },
             {
               "$type": "Document",
@@ -66,8 +65,7 @@
               "RelativeToolTip": "..\\Assets\\Models.cs",
               "ViewState": "AgIAAIoAAAAAAAAAAAAAAHUAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T13:29:19.076Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-07T13:29:19.076Z"
             }
           ]
         }
