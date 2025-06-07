@@ -22,3 +22,16 @@ D:\cshap projekty\PROJEKT_PO\Assets\obj\Debug\net8.0\Assets.pdb
 D:\cshap projekty\PROJEKT_PO\Assets\obj\Debug\net8.0\ref\Assets.dll
 D:\cshap projekty\PROJEKT_PO\Assets\obj\Debug\net8.0\Assets.csproj.AssemblyReference.cache
 D:\cshap projekty\PROJEKT_PO\Assets\obj\Debug\net8.0\Assets.sourcelink.json
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\Assets\bin\Debug\net8.0\Assets.deps.json
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\Assets\bin\Debug\net8.0\Assets.dll
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\Assets\bin\Debug\net8.0\Assets.pdb
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\Assets\obj\Debug\net8.0\Assets.csproj.AssemblyReference.cache
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\Assets\obj\Debug\net8.0\Assets.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\Assets\obj\Debug\net8.0\Assets.AssemblyInfoInputs.cache
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\Assets\obj\Debug\net8.0\Assets.AssemblyInfo.cs
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\Assets\obj\Debug\net8.0\Assets.csproj.CoreCompileInputs.cache
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\Assets\obj\Debug\net8.0\Assets.sourcelink.json
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\Assets\obj\Debug\net8.0\Assets.dll
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\Assets\obj\Debug\net8.0\refint\Assets.dll
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\Assets\obj\Debug\net8.0\Assets.pdb
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\Assets\obj\Debug\net8.0\ref\Assets.dll

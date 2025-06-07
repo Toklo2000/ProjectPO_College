@@ -100,6 +100,89 @@ namespace ProjektPO
                     }
                     //
                     break;
+                                    case "Edit Product":
+                    {
+                        DirectoryInfo productDirectory = new DirectoryInfo("data");
+                        FileInfo[] productFiles = productDirectory.GetFiles("*.prod");
+                        List<string> productNames = new List<string>();
+
+                        foreach (var file in productFiles)
+                        {
+                            productNames.Add(Path.GetFileNameWithoutExtension(file.Name));
+                        }
+                        productNames.Add("Return");
+
+                        Control editControl = new Control();
+                        editControl.AddWindow(new Window(productNames, 2, 2));
+
+                        string selectedProduct = editControl.DrawAndStart();
+
+                        if (selectedProduct == "Return")
+                        {
+                            break;
+                        }
+
+                        string filePath = $"data//{selectedProduct}.prod";
+
+                        if (File.Exists(filePath))
+                        {
+                            Device productToEdit;
+                            using (var file = File.OpenRead(filePath))
+                            {
+                                productToEdit = Serializer.Deserialize<Device>(file);
+                            }
+
+                            productToEdit.setName("Edited Product Name");
+                            productToEdit.setPrice(50.99M);
+
+                            using (var file = File.Create(filePath))
+                            {
+                                Serializer.Serialize(file, productToEdit);
+                            }
+
+                            Console.WriteLine("Product edited successfully!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Error: Product file not found!");
+                        }
+                    }
+                    break;
+                    case "Delete Product":
+                    {
+                        DirectoryInfo productDirectory = new DirectoryInfo("data");
+                        FileInfo[] productFiles = productDirectory.GetFiles("*.prod");
+                        List<string> productNames = new List<string>();
+
+                        foreach (var file in productFiles)
+                        {
+                            productNames.Add(Path.GetFileNameWithoutExtension(file.Name));
+                        }
+                        productNames.Add("Return");
+
+                        Control deleteControl = new Control();
+                        deleteControl.AddWindow(new Window(productNames, 2, 2));
+
+                        string selectedProduct = deleteControl.DrawAndStart();
+
+                        if (selectedProduct == "Return")
+                        {
+                            break;
+                        }
+
+                        string filePath = $"data//{selectedProduct}.prod";
+
+                        if (File.Exists(filePath))
+                        {
+                            File.Delete(filePath);
+                            Console.WriteLine("Product deleted successfully!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Error: Product file not found!");
+                        }
+                    }
+                    break;
                 case "Return to menu":
                     DisplayStartMenu();
                     break;

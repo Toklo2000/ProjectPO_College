@@ -41,3 +41,27 @@ D:\cshap projekty\PROJEKT_PO\ProjektPO\bin\Debug\net8.0\protobuf-net-data.dll
 D:\cshap projekty\PROJEKT_PO\ProjektPO\bin\Debug\net8.0\protobuf-net.Core.dll
 D:\cshap projekty\PROJEKT_PO\ProjektPO\bin\Debug\net8.0\System.Windows.Extensions.dll
 D:\cshap projekty\PROJEKT_PO\ProjektPO\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Windows.Extensions.dll
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\ProjektPO\bin\Debug\net8.0\ProjektPO.exe
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\ProjektPO\bin\Debug\net8.0\ProjektPO.deps.json
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\ProjektPO\bin\Debug\net8.0\ProjektPO.runtimeconfig.json
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\ProjektPO\bin\Debug\net8.0\ProjektPO.dll
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\ProjektPO\bin\Debug\net8.0\ProjektPO.pdb
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\ProjektPO\bin\Debug\net8.0\protobuf-net.dll
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\ProjektPO\bin\Debug\net8.0\protobuf-net-data.dll
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\ProjektPO\bin\Debug\net8.0\protobuf-net.Core.dll
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\ProjektPO\bin\Debug\net8.0\System.Windows.Extensions.dll
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\ProjektPO\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Windows.Extensions.dll
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\ProjektPO\bin\Debug\net8.0\Assets.dll
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\ProjektPO\bin\Debug\net8.0\Assets.pdb
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\ProjektPO\obj\Debug\net8.0\ProjektPO.csproj.AssemblyReference.cache
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\ProjektPO\obj\Debug\net8.0\ProjektPO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\ProjektPO\obj\Debug\net8.0\ProjektPO.AssemblyInfoInputs.cache
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\ProjektPO\obj\Debug\net8.0\ProjektPO.AssemblyInfo.cs
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\ProjektPO\obj\Debug\net8.0\ProjektPO.csproj.CoreCompileInputs.cache
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\ProjektPO\obj\Debug\net8.0\ProjektPO.sourcelink.json
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\ProjektPO\obj\Debug\net8.0\ProjektPO.csproj.Up2Date
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\ProjektPO\obj\Debug\net8.0\ProjektPO.dll
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\ProjektPO\obj\Debug\net8.0\refint\ProjektPO.dll
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\ProjektPO\obj\Debug\net8.0\ProjektPO.pdb
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\ProjektPO\obj\Debug\net8.0\ProjektPO.genruntimeconfig.cache
+C:\Users\Toklo\OneDrive\Dokumenty\GitHub\ProjectPO_College\ProjektPO\obj\Debug\net8.0\ref\ProjektPO.dll

@@ -97,7 +97,11 @@ namespace Models
         {
             this.price = price;
         }
-        public Product(Barcode barcode , string name , string desc , decimal price,Category category , ASCIImage img)
+        public void setName(string newName)
+        {
+            this.name = newName;
+        }
+        public Product(Barcode barcode, string name, string desc, decimal price, Category category, ASCIImage img)
         {
             this.id = barcode;
             this.name = name;
