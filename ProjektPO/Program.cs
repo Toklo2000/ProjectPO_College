@@ -13,28 +13,177 @@ namespace ProjektPO
 {
     class Program
     {
+        private const string WishListFilePath = "data//wishlist.wl";
         static void DisplayProducts()
         {
-            Control productsControl = new Control();
-            DirectoryInfo directoryWithImages = new DirectoryInfo("img//Products");
-            FileInfo[] Files = directoryWithImages.GetFiles("*.txt");
-            List<string> file_names = new List<string>();
-            foreach (FileInfo file in Files)
-            {
-                file_names.Add(file.Name);
-            }
-            file_names.Add("Return");
+            string directoryPath = "data";
 
-            productsControl.AddWindow(new Window(file_names, 2,2));
-            switch (productsControl.DrawAndStart())
+            if (!Directory.Exists(directoryPath))
             {
-                case "Return":
-                    DisplayShop();
-                    break;
-                default:
-                    break;
+                Console.WriteLine("Nie znaleziono katalogu z produktami.");
+                Console.WriteLine("Naciśnij dowolny klawisz, aby wrócić.");
+                Console.ReadKey();
+                DisplayShop();
+                return;
             }
+
+            DirectoryInfo productDirectory = new DirectoryInfo(directoryPath);
+            FileInfo[] productFiles = productDirectory.GetFiles("*.prod");
+
+            if (productFiles.Length == 0)
+            {
+                Console.WriteLine("Brak zapisanych produktów.");
+                Console.WriteLine("Naciśnij dowolny klawisz, aby wrócić.");
+                Console.ReadKey();
+                DisplayShop();
+                return;
+            }
+
+            List<string> productOptions = new List<string>();
+            List<Device> products = new List<Device>();
+
+            foreach (var file in productFiles)
+            {
+                using (var fileStream = File.OpenRead(file.FullName))
+                {
+                    Device product = Serializer.Deserialize<Device>(fileStream);
+                    products.Add(product);
+                    productOptions.Add($"{product.Name} - {product.Price:C}");
+                }
+            }
+
+            productOptions.Add("Return");
+
+            Control productsControl = new Control();
+            productsControl.AddWindow(new Window(productOptions, 2, 2));
+
+            string selectedOption = productsControl.DrawAndStart();
+
+            if (selectedOption == "Return")
+            {
+                DisplayShop();
+                return;
+            }
+
+            Device selectedProduct = null;
+
+            foreach (var product in products)
+            {
+                if ($"{product.Name} - {product.Price:C}" == selectedOption)
+                {
+                    selectedProduct = product;
+                    break;
+                }
+            }
+
+            if (selectedProduct != null)
+            {
+                Console.Clear();
+                Console.WriteLine($"Nazwa: {selectedProduct.Name}");
+                Console.WriteLine($"Cena: {selectedProduct.Price:C}");
+                Console.WriteLine($"Opis: {selectedProduct.Description}");
+                Console.WriteLine($"Kategoria: {selectedProduct.Category}");
+                Console.WriteLine("\nNaciśnij dowolny klawisz, aby wrócić.");
+                Console.ReadKey();
+            }
+
+            DisplayProducts();
         }
+        
+        static void DisplayWishList()
+        {
+            if (!File.Exists(WishListFilePath))
+            {
+                Console.WriteLine("Brak zapisanej listy życzeń.");
+                Console.ReadKey();
+                DisplayShop();
+                return;
+            }
+
+            WishList wishList;
+            using (var file = File.OpenRead(WishListFilePath))
+            {
+                wishList = Serializer.Deserialize<WishList>(file);
+            }
+
+            if (wishList.Products.Count == 0)
+            {
+                Console.WriteLine("Lista życzeń jest pusta.");
+                Console.ReadKey();
+                DisplayShop();
+                return;
+            }
+
+            List<string> options = new List<string>();
+            foreach (var product in wishList.Products)
+            {
+                options.Add($"{product.Name} - {product.Price:C}");
+            }
+            options.Add("Return");
+
+            Control control = new Control();
+            control.AddWindow(new Window(options, 2, 2));
+
+            string selected = control.DrawAndStart();
+
+            if (selected == "Return")
+            {
+                DisplayShop();
+                return;
+            }
+
+            Device selectedProduct = null;
+            foreach (var product in wishList.Products)
+            {
+                if ($"{product.Name} - {product.Price:C}" == selected)
+                {
+                    selectedProduct = product;
+                    break;
+                }
+            }
+
+            if (selectedProduct != null)
+            {
+                Console.Clear();
+                Console.WriteLine($"Nazwa: {selectedProduct.Name}");
+                Console.WriteLine($"Cena: {selectedProduct.Price:C}");
+                Console.WriteLine($"Opis: {selectedProduct.Description}");
+                Console.WriteLine($"Kategoria: {selectedProduct.Category}");
+                Console.WriteLine("\nNaciśnij dowolny klawisz, aby wrócić.");
+                Console.ReadKey();
+            }
+
+            DisplayWishList();
+        }
+
+
+        static void AddToWishList(Device product)
+        {
+            WishList wishList;
+
+            if (File.Exists(WishListFilePath))
+            {
+                using (var file = File.OpenRead(WishListFilePath))
+                {
+                    wishList = Serializer.Deserialize<WishList>(file);
+                }
+            }
+            else
+            {
+                wishList = new WishList();
+            }
+
+            wishList.Products.Add(product);
+
+            using (var file = File.Create(WishListFilePath))
+            {
+                Serializer.Serialize(file, wishList);
+            }
+
+            Console.WriteLine("Produkt został dodany do listy życzeń!");
+            Console.ReadKey();
+        }
+
         
         static void DisplayShop()
         {
@@ -74,6 +223,9 @@ namespace ProjektPO
                 case "See Products":
                     DisplayProducts();
                     break;
+                case "Wish List":
+                    DisplayWishList();
+                    break;
                 case "Add Product":
                     //
                     Device device = new Device(
@@ -100,7 +252,7 @@ namespace ProjektPO
                     }
                     //
                     break;
-                                    case "Edit Product":
+                case "Edit Product":
                     {
                         DirectoryInfo productDirectory = new DirectoryInfo("data");
                         FileInfo[] productFiles = productDirectory.GetFiles("*.prod");
@@ -148,7 +300,7 @@ namespace ProjektPO
                         }
                     }
                     break;
-                    case "Delete Product":
+                case "Delete Product":
                     {
                         DirectoryInfo productDirectory = new DirectoryInfo("data");
                         FileInfo[] productFiles = productDirectory.GetFiles("*.prod");
@@ -211,7 +363,7 @@ namespace ProjektPO
                     DisplayShop();
                     break;
                 case "Load wish list":
-                    Console.WriteLine("X");
+                    DisplayWishList();
                     break;
                 case "Exit":
                     break;

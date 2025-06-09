@@ -12,10 +12,10 @@ namespace Models
 {
     public enum ElectronicSI
     {
-        Wat='W',
-        Voltage='V',
-        Amper='A',
-        Byte='B'
+        Wat = 'W',
+        Voltage = 'V',
+        Amper = 'A',
+        Byte = 'B'
     };
     public enum Category
     {
@@ -30,17 +30,17 @@ namespace Models
     public class Barcode
     {
         [ProtoMember(1)]
-        private Byte code          {get;set;}
+        private Byte code { get; set; }
 
-        public  Barcode(Byte code) 
-        {this.code = code;}
-        public  Byte getCode()     
-        {return code;}
+        public Barcode(Byte code)
+        { this.code = code; }
+        public Byte getCode()
+        { return code; }
     };
 
     internal interface IProduct
     {
-        Tuple<string,string,decimal?> getData();
+        Tuple<string, string, decimal?> getData();
         Barcode getBarcode();
         void setPrice(decimal price);
     }
@@ -59,15 +59,15 @@ namespace Models
         [ProtoMember(1)]
         protected Barcode id;
         [ProtoMember(2)]
-        protected decimal? price {get;set;}
+        protected decimal? price { get; set; }
         [ProtoMember(3)]
-        protected string name {get;set;}
+        protected string name { get; set; }
         [ProtoMember(4)]
-        protected string description {get;set;}
+        protected string description { get; set; }
         [ProtoMember(5)]
-        protected Category category { get;set;}
+        protected Category category { get; set; }
         [ProtoMember(6)]
-        protected ASCIImage image {get;set;}
+        protected ASCIImage image { get; set; }
 
         public string Name
         {
@@ -87,7 +87,7 @@ namespace Models
         }
         public Tuple<string, string, decimal?> getData()
         {
-            return new Tuple<string, string, decimal?>(this.name,this.description,this.price);
+            return new Tuple<string, string, decimal?>(this.name, this.description, this.price);
         }
         public Barcode getBarcode()
         {
@@ -116,10 +116,10 @@ namespace Models
     }
 
     [ProtoContract]
-    public class Device : Product , IElectronics
+    public class Device : Product, IElectronics
     {
         [ProtoMember(1)]
-        public Dictionary<string,string> techSpecification { get; set; }
+        public Dictionary<string, string> techSpecification { get; set; }
         [ProtoMember(2)]
         protected Tuple<decimal?, ElectronicSI> power { get; set; }
         [ProtoMember(3)]
@@ -148,7 +148,7 @@ namespace Models
         }
         public Tuple<string, string, decimal?> getData()
         {
-            return new Tuple<string, string, decimal?>("","",0M);
+            return new Tuple<string, string, decimal?>("", "", 0M);
         }
         public Dictionary<string, string> getTechnicalSpecifications()
         {
@@ -158,12 +158,18 @@ namespace Models
         {
             return id;
         }
-        public Device(Barcode barcode , string name , string desc , decimal price, Category category, ASCIImage img, decimal wats, decimal volts, decimal ampesrs, decimal bytes) : base(barcode,  name,  desc,  price, category , img)
+        public Device(Barcode barcode, string name, string desc, decimal price, Category category, ASCIImage img, decimal wats, decimal volts, decimal ampesrs, decimal bytes) : base(barcode, name, desc, price, category, img)
         {
             this.power = new Tuple<decimal?, ElectronicSI>(wats, ElectronicSI.Wat);
             this.voltage = new Tuple<decimal?, ElectronicSI>(volts, ElectronicSI.Voltage);
             this.current = new Tuple<decimal?, ElectronicSI>(ampesrs, ElectronicSI.Amper);
             this.logicthread = new Tuple<decimal?, ElectronicSI>(bytes, ElectronicSI.Byte);
         }
+    }
+    [ProtoContract]
+    public class WishList
+    {
+        [ProtoMember(1)]
+        public List<Device> Products { get; set; } = new List<Device>();
     }
 }
